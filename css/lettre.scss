@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	background-color: #fffff8;
+	background-image: url(../images/motif_encre.svg);
+	font-family: 'Noto Serif TC', serif;
+}
+header {
+	font-size: 5em;
+	text-align: center;
+}
+form {
+	border: 2px dotted black;
+	padding: 2em;
+	margin-top: 1em;
+}
+nav {
+	background-color: #330;
+	color: white;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 1em;
+	}
+	li.courant {
+		background-color: #cc9;
+		color: black;
+	}
+}
+.interface {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 960px;
+	margin: 0 auto;
+}
+
+h2 {
+	text-align: center;
+	// margin: 0;
+}
+div.lettre {
+	font-family: 'Caveat', cursive;
+	font-size: 20pt;
+	width: 8.5in;
+	height: 11in;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 3em;
+	border: 1px solid rgba(0,0,0,.3);
+	background-color: rgb(247, 245, 235);
+	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}

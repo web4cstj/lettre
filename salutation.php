@@ -1,5 +1,5 @@
 <?php
-include "donnees.inc.php";
+include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues
 // - On redirige vers nom.php si la donnée "nom" n'existe pas
 
@@ -19,19 +19,26 @@ $selectSalutation .= '</select>';
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="lettre.css"/>
+		<link rel="stylesheet" href="css/lettre.css"/>
 		<title>Lettre - Salutation</title>
 	</head>
 	<body>
-		<h1>Choisissez une formule de salutation</h1>
-		<form action="titre.php" method="get">
-			<div>
-				<label for="salutation">Salutation : </label>
-				<?php echo $selectSalutation // Affichage du menu déroulant ?>
-				<input type="submit"/>
-        <!-- Il manquait quelque chose ici -->
-				<input type="hidden" name="nom" value="<?php echo $nom ?>" />
+		<div class="interface">
+			<?php include "includes/headerfooternav.inc.php"; ?>
+			<div class="app">
+				<h2>Choisissez une formule de salutation</h2>
+				<form action="titre.php" method="get">
+					<div>
+						<label for="salutation">Salutation : </label>
+						<?php echo $selectSalutation // Affichage du menu déroulant ?>
+					</div>
+					<div>
+						<input type="submit"/>
+						<!-- Il manquait quelque chose ici -->
+						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
+					</div>
+				</form>
 			</div>
-		</form>
+		</div>
 	</body>
 </html>

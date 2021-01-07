@@ -1,5 +1,5 @@
 <?php
-include "donnees.inc.php";
+include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues
 // - On redirige vers nom.php si la donnée "nom" n'existe pas
 if (!isset($_GET['nom'])) {
@@ -25,20 +25,27 @@ $selectTitre .= '</select>';
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="lettre.css"/>
+		<link rel="stylesheet" href="css/lettre.css"/>
 		<title>Lettre - Titre</title>
 	</head>
 	<body>
-		<h1>Choisissez le titre du destinataire</h1>
-		<form action="paragraphe.php" method="get">
-			<div>
-				<label for="titre">Titre du destinataire : </label>
-				<?php echo $selectTitre; // Affichage du menu déroulant ?>
-				<input type="submit"/>
-        		<!-- Il manquait quelque chose ici -->
-				<input type="hidden" name="nom" value="<?php echo $nom ?>" />
-				<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
+	<div class="interface">
+		<?php include "includes/headerfooternav.inc.php"; ?>
+			<div class="app">
+				<form action="paragraphe.php" method="get">
+					<h2>Choisissez le titre du destinataire</h2>
+					<div>
+						<label for="titre">Titre du destinataire : </label>
+						<?php echo $selectTitre; // Affichage du menu déroulant ?>
+					</div>
+					<div>
+						<input type="submit"/>
+						<!-- Il manquait quelque chose ici -->
+						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
+						<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
+					</div>
+				</form>
 			</div>
-		</form>
+		</div>
 	</body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-include "donnees.inc.php";
+include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues
 // - On redirige vers nom.php si la donnée "nom" n'existe pas
 if (!isset($_GET['nom'])) {
@@ -23,7 +23,14 @@ if (!isset($_GET['titre'])) {
 // Préparation de la liste de boutons radio
 $radioParagraphe = '<div>';
 foreach($paragraphes as $indice=>$txtParagraphe) {
-	$radioParagraphe .= '<p><label><input name="paragraphe" type="radio" value="'.$indice.'" /> '.$txtParagraphe.'</label></p>';
+	$radioParagraphe .= '<p><label>';
+	if ($indice === 0) {
+		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" checked="checked" /> ';
+	} else {
+		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" /> ';
+	}
+	$radioParagraphe .= substr($txtParagraphe, 0, 100).'...';
+	$radioParagraphe .= '</label></p>';
 }
 $radioParagraphe .= '</div>';
 
@@ -31,22 +38,29 @@ $radioParagraphe .= '</div>';
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="lettre.css"/>
+		<link rel="stylesheet" href="css/lettre.css"/>
 		<title>Lettre - Paragraphe</title>
 	</head>
 	<body>
-		<h1>Choisissez le message</h1>
-		<!-- Changer la méthode pour post -->
-		<form action="index.php" method="post">
-			<div>
-				<label for="paragraphe">Paragraphe : </label>
-				<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
-				<input type="submit"/>
-        <!-- Il manquait quelque chose ici -->
-        <input type="hidden" name="nom" value="<?php echo $nom ?>" />
-				<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
-				<input type="hidden" name="titre" value="<?php echo $titre ?>" />
+		<div class="interface">
+			<?php include "includes/headerfooternav.inc.php"; ?>
+			<div class="app">
+				<h1>Choisissez le message</h1>
+				<!-- Changer la méthode pour post -->
+				<form action="index.php" method="post">
+					<div>
+						<label for="paragraphe">Paragraphe : </label>
+						<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
+					</div>
+					<div>
+						<input type="submit"/>
+						<!-- Il manquait quelque chose ici -->
+						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
+						<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
+						<input type="hidden" name="titre" value="<?php echo $titre ?>" />
+					</div>
+				</form>
 			</div>
-		</form>
+		</div>
 	</body>
 </html>

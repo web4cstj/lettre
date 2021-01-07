@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap");
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #fffff8;
+  background-image: url(../images/motif_encre.svg);
+  font-family: 'Noto Serif TC', serif;
+}
+
+header {
+  font-size: 5em;
+  text-align: center;
+}
+
+form {
+  border: 2px dotted black;
+  padding: 2em;
+  margin-top: 1em;
+}
+
+nav {
+  background-color: #330;
+  color: white;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+nav li.courant {
+  background-color: #cc9;
+  color: black;
+}
+
+.interface {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 960px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+div.lettre {
+  font-family: 'Caveat', cursive;
+  font-size: 20pt;
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #f7f5eb;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+/*# sourceMappingURL=lettre.css.map */

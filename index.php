@@ -1,5 +1,5 @@
 <?php
-include "donnees.inc.php";
+include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues en POST
 // - On redirige vers nom.php si la donnée "nom" n'existe pas.
 //   On n'a pas à vérifier d'autres données, car on est en post.
@@ -20,11 +20,16 @@ $lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="lettre.css"/>
+		<link rel="stylesheet" href="css/lettre.css"/>
 		<title>Lettre - Final</title>
 	</head>
 	<body>
-		<h1>Voici la lettre :</h1>
-		<div class="lettre"><?php echo $lettre; // Affichage de la liste de boutons de radio ?></div>
+	<div class="interface">
+		<?php include "includes/headerfooternav.inc.php"; ?>
+			<div class="app">
+				<h1>Voici la lettre :</h1>
+				<div class="lettre"><?php echo $lettre; // Affichage de la liste de boutons de radio ?></div>
+			</div>
+		</div>
 	</body>
 </html>

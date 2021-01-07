@@ -1,5 +1,5 @@
 <?php
-include "donnees.inc.php";
+include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues
 // - On donne une valeur par défaut si la donnée "nom" n'existe pas
 $nom = "";
@@ -47,45 +47,55 @@ $selectTitre .= '</select>';
 $radioParagraphe = '<div>';
 foreach($paragraphes as $indice=>$txtParagraphe) {
 	$checked = ($indice==$titre) ? ' checked="checked"' : '';
-	$radioParagraphe .= '<p><label><input name="paragraphe" type="radio" value="'.$indice.'"'.$checked.' /> '.$txtParagraphe.'</label></p>';
+	$radioParagraphe .= '<p><label>';
+	$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'"'.$checked.' /> ';
+	$radioParagraphe .= substr($txtParagraphe, 0, 100).'...';
+	$radioParagraphe .= '</label></p>';
 }
 $radioParagraphe .= '</div>';
 
 // Préparation de l'affichage final
 $lettre = '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';
 $lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
-$lettre = '<div style="font-size:larger; font-family:cursive;">'.$lettre.'</div>';
+$lettre = '<div>'.$lettre.'</div>';
 ?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Une lettre personnalisée</title>
+		<link rel="stylesheet" href="css/lettre.css">
 		<meta charset="utf-8" />
 	</head>
-	<body style="width:760px; margin:0 auto;">
-		<h1>Une lettre personnalisée</h1>
-		<h2>Voici la lettre</h2>
-		<?php echo $lettre; // Affichage de la liste de boutons de radio ?>
-		<form action="compil.php" method="get" style="border:1px dotted black; padding:1em;">
-			<h2>Modifier la lettre</h2>
-			<div>
-				<label for="nom">Destinataire : </label>
-				<?php echo $inputNom // Affichage du champ de texte ?>
+	<body>
+		<div class="interface">
+			<?php include "includes/headerfooternav.inc.php"; ?>
+			<div class="app">
+				<h2>Voici la lettre</h2>
+				<div class="lettre">
+					<?php echo $lettre; // Affichage de la liste de boutons de radio ?>
+				</div>
+				<form action="compil.php" method="get">
+					<h2>Modifier la lettre</h2>
+					<div>
+						<label for="nom">Destinataire : </label>
+						<?php echo $inputNom // Affichage du champ de texte ?>
+					</div>
+					<div>
+						<label for="salutation">Salutation : </label>
+						<?php echo $selectSalutation // Affichage du menu déroulant ?>
+					</div>
+					<div>
+						<label for="titre">Titre du destinataire : </label>
+						<?php echo $selectTitre; // Affichage du menu déroulant ?>
+					</div>
+					<div>
+						<label for="paragraphe">Paragraphe : </label>
+						<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
+					</div>
+					<div>
+						<input type="submit"/>
+					</div>
+				</form>
 			</div>
-			<div>
-				<label for="salutation">Salutation : </label>
-				<?php echo $selectSalutation // Affichage du menu déroulant ?>
-			</div>
-			<div>
-				<label for="titre">Titre du destinataire : </label>
-				<?php echo $selectTitre; // Affichage du menu déroulant ?>
-			</div>
-			<div>
-				<label for="paragraphe">Paragraphe : </label>
-				<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
-			</div>
-			<div>
-				<input type="submit"/>
-			</div>
-		</form>
-	<?php include_once "../source.php"; ?></body>
+		</div>
+	</body>
 </html>
