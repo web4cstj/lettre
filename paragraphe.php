@@ -39,8 +39,8 @@ $radioParagraphe .= '</div>';
 		<div class="interface">
 			<?php include "includes/headerfooternav.inc.php"; ?>
 			<div class="app">
-				<h1>Choisissez le message</h1>
 				<form action="lettre.php" method="get">
+					<h2>Choisissez le message</h2>
 					<div>
 						<label for="paragraphe">Paragraphe : </label>
 						<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>

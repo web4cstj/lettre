@@ -24,4 +24,4 @@ foreach($elementsMenu as $page => $element) {
 <nav>
 <ul><?php echo $nav; ?></ul>
 </nav>
-<footer></footer>
+<footer>&copy; Cégep de Saint-Jérôme</footer>

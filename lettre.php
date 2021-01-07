@@ -12,9 +12,9 @@ if (!isset($_GET['nom']) || !isset($_GET['salutation']) || !isset($_GET['titre']
 
 // Récupération des données
 $nom = $_GET['nom'];
-$salutation = $_GET['salutation'];
+$salutation = intval($_GET['salutation']);
 $titre = $_GET['titre'];
-$paragraphe = $_GET['paragraphe'];
+$paragraphe = intval($_GET['paragraphe']);
 
 // Préparation de l'affichage final
 $lettre = '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';

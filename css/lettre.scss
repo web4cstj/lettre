@@ -14,6 +14,15 @@ header {
 	font-size: 5em;
 	text-align: center;
 }
+footer {
+	order: 1000;
+	background-color: black;
+	color: white;
+	padding: .5em 1em;
+}
+.app {
+	flex: 1 0 auto;
+}
 form {
 	border: 2px dotted black;
 	padding: 2em;
