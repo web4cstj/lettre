@@ -1,10 +1,10 @@
 <?php
 $elementsMenu = [
-    'index.php' => 'Accueil (La lettre)',
-    'nom.php' => 'Le nom',
+    'index.php' => 'Accueil (Le nom)',
     'salutation.php' => 'Une salutation',
     'titre.php' => 'Le titre',
     'paragraphe.php' => 'Le contenu',
+    'lettre.php' => 'La lettre',
     'compil.php' => 'Tout ensemble',
 ];
 $nav = '';

@@ -23,6 +23,10 @@ form {
   margin-top: 1em;
 }
 
+form h2 {
+  margin-top: 0;
+}
+
 nav {
   background-color: #330;
   color: white;

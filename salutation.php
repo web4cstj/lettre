@@ -1,12 +1,12 @@
 <?php
 include "includes/donnees.inc.php";
 // Vérification et récupération des données attendues
-// - On redirige vers nom.php si la donnée "nom" n'existe pas
-
+// - On redirige vers index.php si la donnée "nom" n'existe pas
 if (!isset($_GET['nom'])) {
-	header("location:nom.php");
+	header("location:index.php");
 	exit;
 }
+// Récupération de la donnée
 $nom = $_GET['nom'];
 
 // Préparation de l'affichage du menu déroulant
@@ -26,8 +26,8 @@ $selectSalutation .= '</select>';
 		<div class="interface">
 			<?php include "includes/headerfooternav.inc.php"; ?>
 			<div class="app">
-				<h2>Choisissez une formule de salutation</h2>
 				<form action="titre.php" method="get">
+					<h2>Choisissez une formule de salutation</h2>
 					<div>
 						<label for="salutation">Salutation : </label>
 						<?php echo $selectSalutation // Affichage du menu déroulant ?>

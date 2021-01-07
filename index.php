@@ -1,35 +1,31 @@
 <?php
-include "includes/donnees.inc.php";
-// Vérification et récupération des données attendues en POST
-// - On redirige vers nom.php si la donnée "nom" n'existe pas.
-//   On n'a pas à vérifier d'autres données, car on est en post.
-if (!isset($_POST['nom'])) {
-	header("location:nom.php");
-	exit;
-}
-$nom = $_POST['nom'];
-$salutation = $_POST['salutation'];
-$titre = $_POST['titre'];
-$paragraphe = $_POST['paragraphe'];
-
-// Préparation de l'affichage final
-$lettre = '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';
-$lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
-
-?><!DOCTYPE html>
+// Rien à faire ici
+?>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="css/lettre.css"/>
-		<title>Lettre - Final</title>
-	</head>
-	<body>
+<head>
+	<meta charset="utf-8" />
+	<title>Une lettre personnalisée</title>
+	<link rel="stylesheet" href="css/lettre.css"/>
+</head>
+
+<body>
 	<div class="interface">
 		<?php include "includes/headerfooternav.inc.php"; ?>
-			<div class="app">
-				<h1>Voici la lettre :</h1>
-				<div class="lettre"><?php echo $lettre; // Affichage de la liste de boutons de radio ?></div>
-			</div>
+		<div class="app">
+			<!-- Faire le formulaire ici -->
+			<form action="salutation.php" method="get">
+				<h2>Donnez le nom du destinataire</h2>
+				<div>
+					<label for="nom">Destinataire : </label>
+					<input type="text" name="nom" id="nom" />
+				</div>
+				<div>
+					<input type="submit" />
+				</div>
+			</form>
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
