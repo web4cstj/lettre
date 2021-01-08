@@ -28,7 +28,14 @@ if (isset($_GET['paragraphe'])) {
 
 // Préparation de l'affichage des champs du formulaire
 // - Champ de texte "nom"
-$inputNom = '<input type="text" name="nom" id="nom" value="'.$nom.'" />';
+$inputNom = '<input type="text" name="nom" id="nom" value="'.$nom.'" list="noms" />';
+// - Création de la datalist "noms"
+$datalist = '';
+$datalist .= '<datalist id="noms">';
+foreach($nomsFictifs as $nomFictif) {
+	$datalist .= '<option value="'.$nomFictif.'"></option>';
+}
+$datalist .= '</datalist>';
 
 // - Menu déroulant "salutation"
 $selectSalutation = '<select name="salutation" id="salutation">';
@@ -56,14 +63,14 @@ $selectTitre .= '</select>';
 // - Boutons radio "paragraphe"
 $radioParagraphe = '<div>';
 foreach($paragraphes as $indice=>$txtParagraphe) {
-	$radioParagraphe .= '<p><label>';
+	$radioParagraphe .= '<div><label>';
 	if ($indice === $paragraphe) {
 		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" checked="checked" /> ';
 	} else {
 		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" /> ';
 	}
 	$radioParagraphe .= substr($txtParagraphe, 0, 100).'...';
-	$radioParagraphe .= '</label></p>';
+	$radioParagraphe .= '</label></div>';
 }
 $radioParagraphe .= '</div>';
 
@@ -74,7 +81,7 @@ $lettre .= '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';
 $lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
 $lettre .= '</div>';
 ?><!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<title>Une lettre personnalisée</title>
 		<link rel="stylesheet" href="css/lettre.css">
@@ -85,23 +92,30 @@ $lettre .= '</div>';
 			<?php include "includes/headerfooternav.inc.php"; ?>
 			<div class="app">
 				<h2>Voici la lettre</h2>
+				<!-- La lettre finale -->
 				<?php echo $lettre; // Affichage de la lettre ?>
 				<form action="compil.php" method="get">
 					<h2>Modifier la lettre</h2>
 					<div>
 						<label for="nom">Destinataire : </label>
+						<!-- Le champ de texte -->
 						<?php echo $inputNom // Affichage du champ de texte ?>
+						<!-- Le datalist -->
+						<?php echo $datalist // Affichage de la datalist ?>
 					</div>
 					<div>
 						<label for="salutation">Salutation : </label>
+						<!-- Le select salutation -->
 						<?php echo $selectSalutation // Affichage du menu déroulant ?>
 					</div>
 					<div>
 						<label for="titre">Titre du destinataire : </label>
+						<!-- Le select titre -->
 						<?php echo $selectTitre; // Affichage du menu déroulant ?>
 					</div>
 					<div>
 						<label for="paragraphe">Paragraphe : </label>
+						<!-- La série de boutons radio -->
 						<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
 					</div>
 					<div>

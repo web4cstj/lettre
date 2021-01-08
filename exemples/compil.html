@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Une lettre personnalisée</title>
+    <link rel="stylesheet" href="../css/lettre.css">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div class="interface">
+        <header>Une lettre personnalisée</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil (Le nom)</a></li>
+                <li><a href="salutation.html">Une salutation</a></li>
+                <li><a href="titre.html">Le titre</a></li>
+                <li><a href="paragraphe.html">Le contenu</a></li>
+                <li><a href="lettre.html">La lettre</a></li>
+                <li class="courant"><a href="compil.html">Tout ensemble</a></li>
+            </ul>
+        </nav>
+        <footer>&copy; Cégep de Saint-Jérôme</footer>
+        <div class="app">
+            <h2>Voici la lettre</h2>
+            <!-- La lettre finale -->
+            <div class="lettre">
+                <p>Mes hommages Madame Rita Raté,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac massa est. Morbi condimentum aliquet
+                    vehicula. Pellentesque mattis facilisis eros in auctor. Cras ac rhoncus lorem. Nulla facilisis
+                    scelerisque nulla, ut dapibus neque lobortis a. Donec et libero nibh, scelerisque porta risus. Morbi
+                    eget odio sit amet sem dapibus tincidunt. Maecenas eu purus sit amet felis condimentum ultrices.</p>
+            </div>
+            <form action="compil.php" method="get">
+                <h2>Modifier la lettre</h2>
+                <div>
+                    <label for="nom">Destinataire : </label>
+                    <!-- Le champ de texte -->
+                    <input type="text" name="nom" id="nom" value="Rita Raté" list="noms" />
+                    <!-- Le datalist -->
+                    <datalist id="noms">
+                        <option value="Rita Raté"></option>
+                        <option value="Rémi Doré"></option>
+                        <option value="Gaétan Tanguay"></option>
+                        <option value="Aurélie O'Reilly"></option>
+                        <option value="Norbert Bernard"></option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="salutation">Salutation : </label>
+                    <!-- Le select salutation -->
+                    <select name="salutation" id="salutation">
+                        <option value="0">Bonjour</option>
+                        <option value="1">Bonsoir</option>
+                        <option value="2">Salut</option>
+                        <option value="3" selected="selected">Mes hommages</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="titre">Titre du destinataire : </label>
+                    <!-- Le select titre -->
+                    <select name="titre" id="titre">
+                        <option value="M.">Monsieur</option>
+                        <option value="Mme" selected="selected">Madame</option>
+                        <option value="Dr">Docteur</option>
+                        <option value="Me">Maître</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="paragraphe">Paragraphe : </label>
+                    <!-- La série de boutons radio -->
+                    <div>
+                        <div><label><input name="paragraphe" type="radio" value="0" checked="checked" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac massa est. Morbi condimentum aliquet ...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="1" /> Suspendisse vitae est eros, nec aliquet mauris. Curabitur volutpat dictum augue ut ornare. Pellentes...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="2" /> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ...</label> </div>
+                        <div><label><input name="paragraphe" type="radio" value="3" /> Nunc nisl ipsum, congue id vehicula nec, venenatis eu arcu. Praesent bibendum euismod enim, sit amet...</label> </div>
+                        <div><label><input name="paragraphe" type="radio" value="4" /> Ut porta adipiscing sem sed mattis. Duis ligula velit, laoreet at volutpat sed, dapibus a lacus. Qui...</label> </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

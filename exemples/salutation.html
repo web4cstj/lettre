@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/lettre.css" />
+    <title>Lettre - Salutation</title>
+</head>
+
+<body>
+    <div class="interface">
+        <header>Une lettre personnalisée</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil (Le nom)</a></li>
+                <li class="courant"><a href="salutation.html">Une salutation</a></li>
+                <li><a href="titre.html">Le titre</a></li>
+                <li><a href="paragraphe.html">Le contenu</a></li>
+                <li><a href="lettre.html">La lettre</a></li>
+                <li><a href="compil.html">Tout ensemble</a></li>
+            </ul>
+        </nav>
+        <footer>&copy; Cégep de Saint-Jérôme</footer>
+        <div class="app">
+            <form action="titre.php" method="get">
+                <h2>Choisissez une formule de salutation</h2>
+                <div>
+                    <label for="salutation">Salutation : </label>
+                    <!-- Champ select -->
+                    <select name="salutation" id="salutation">
+                        <option value="0">Bonjour</option>
+                        <option value="1">Bonsoir</option>
+                        <option value="2">Salut</option>
+                        <option value="3">Mes hommages</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" />
+                    <!-- Champ caché -->
+                    <input type="hidden" name="nom" value="Rita Raté" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

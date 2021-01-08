@@ -16,12 +16,15 @@ $salutation = intval($_GET['salutation']);
 $titre = $_GET['titre'];
 $paragraphe = intval($_GET['paragraphe']);
 
-// Préparation de l'affichage final
-$lettre = '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';
+// Création de l'affichage final
+$lettre = '';
+$lettre .= '<div class="lettre">';
+$lettre .= '<p>'.$salutations[$salutation].' '.$titres[$titre].' '.$nom.',</p>';
 $lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
+$lettre .= '</div>';
 
 ?><!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/lettre.css"/>
@@ -32,7 +35,8 @@ $lettre .= '<p>'.$paragraphes[$paragraphe].'</p>';
 		<?php include "includes/headerfooternav.inc.php"; ?>
 			<div class="app">
 				<h1>Voici la lettre :</h1>
-				<div class="lettre"><?php echo $lettre; // Affichage de la liste de boutons de radio ?></div>
+				<!-- La lettre finale -->
+				<?php echo $lettre; // Affichage de la lettre ?>
 			</div>
 		</div>
 	</body>

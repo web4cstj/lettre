@@ -11,14 +11,18 @@ if (!isset($_GET['nom']) || !isset($_GET['salutation'])) {
 $nom = $_GET['nom'];
 $salutation = $_GET['salutation'];
 
-// Préparation de l'affichage du menu déroulant
+// Création de l'affichage des 2 champs cachés
+$inputNom = '<input type="hidden" name="nom" value="'.$nom.'" />';
+$inputSalutation = '<input type="hidden" name="salutation" value="'.$salutation.'" />';
+
+// Création de l'affichage du menu déroulant
 $selectTitre = '<select name="titre" id="titre">';
 foreach($titres as $indice=>$mot) {
 	$selectTitre .= '<option value="'.$indice.'">'.$mot.'</option>';
 }
 $selectTitre .= '</select>';
 ?><!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/lettre.css"/>
@@ -32,13 +36,14 @@ $selectTitre .= '</select>';
 					<h2>Choisissez le titre du destinataire</h2>
 					<div>
 						<label for="titre">Titre du destinataire : </label>
+						<!-- Champ select -->
 						<?php echo $selectTitre; // Affichage du menu déroulant ?>
 					</div>
 					<div>
 						<input type="submit"/>
-						<!-- Il manquait quelque chose ici -->
-						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
-						<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
+						<!-- 2 champs cachés -->
+						<?php echo $inputNom; ?>
+						<?php echo $inputSalutation; ?>
 					</div>
 				</form>
 			</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/lettre.css" />
+    <title>Lettre - Paragraphe</title>
+</head>
+
+<body>
+    <div class="interface">
+        <header>Une lettre personnalisée</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil (Le nom)</a></li>
+                <li><a href="salutation.html">Une salutation</a></li>
+                <li><a href="titre.html">Le titre</a></li>
+                <li class="courant"><a href="paragraphe.html">Le contenu</a></li>
+                <li><a href="lettre.html">La lettre</a></li>
+                <li><a href="compil.html">Tout ensemble</a></li>
+            </ul>
+        </nav>
+        <footer>&copy; Cégep de Saint-Jérôme</footer>
+        <div class="app">
+            <form action="lettre.php" method="get">
+                <h2>Choisissez le message</h2>
+                <div>
+                    <label for="paragraphe">Paragraphe : </label>
+                    <!-- Série de boutons radio -->
+                    <div>
+                        <div><label><input name="paragraphe" type="radio" value="0" checked="checked" /> Lorem ipsumdolor sit amet, consectetur adipiscing elit. Ut ac massa est. Morbi condimentum aliquet...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="1" /> Suspendisse vitae est eros, necaliquet mauris. Curabitur volutpat dictum augue ut ornare. Pellentes...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="2" /> Pellentesque habitant morbitristique senectus et netus et malesuada fames ac turpis egestas. Etiam ...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="3" /> Nunc nisl ipsum, congue idvehicula nec, venenatis eu arcu. Praesent bibendum euismod enim, sit amet...</label></div>
+                        <div><label><input name="paragraphe" type="radio" value="4" /> Ut porta adipiscing sem sedmattis. Duis ligula velit, laoreet at volutpat sed, dapibus a lacus. Qui...</label></div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" />
+                    <!-- 3 champs cachés -->
+                    <input type="hidden" name="nom" value="Rita Raté" />
+                    <input type="hidden" name="salutation" value="3" />
+                    <input type="hidden" name="titre" value="Mme" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

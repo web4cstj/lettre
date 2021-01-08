@@ -9,14 +9,17 @@ if (!isset($_GET['nom'])) {
 // Récupération de la donnée
 $nom = $_GET['nom'];
 
-// Préparation de l'affichage du menu déroulant
+// Création de l'affichage du champ invisible "nom"
+$inputNom = '<input type="hidden" name="nom" value="'.$nom.'" />';
+
+// Création de l'affichage du menu déroulant
 $selectSalutation = '<select name="salutation" id="salutation">';
 foreach($salutations as $indice=>$mot) {
 	$selectSalutation .= '<option value="'.$indice.'">'.$mot.'</option>';
 }
 $selectSalutation .= '</select>';
 ?><!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/lettre.css"/>
@@ -30,12 +33,13 @@ $selectSalutation .= '</select>';
 					<h2>Choisissez une formule de salutation</h2>
 					<div>
 						<label for="salutation">Salutation : </label>
+						<!-- Champ select -->
 						<?php echo $selectSalutation // Affichage du menu déroulant ?>
 					</div>
 					<div>
 						<input type="submit"/>
-						<!-- Il manquait quelque chose ici -->
-						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
+						<!-- Champ caché -->
+						<?php echo $inputNom ?>
 					</div>
 				</form>
 			</div>

@@ -18,4 +18,10 @@ $paragraphes = [
 	'Nunc nisl ipsum, congue id vehicula nec, venenatis eu arcu. Praesent bibendum euismod enim, sit amet porttitor nisi porttitor non. Praesent laoreet, sem nec molestie adipiscing, elit sapien condimentum risus, nec ornare nisl dolor a velit. Maecenas faucibus, ipsum vitae cursus ullamcorper, lorem magna gravida nisi, a mattis nunc mauris quis turpis. Maecenas sit amet felis non velit hendrerit tincidunt vitae non massa. Aliquam eget adipiscing libero. Nam venenatis ipsum id nisl vulputate et varius eros venenatis. Sed pellentesque vulputate orci quis convallis.',
 	'Ut porta adipiscing sem sed mattis. Duis ligula velit, laoreet at volutpat sed, dapibus a lacus. Quisque non velit a leo iaculis rhoncus quis quis sapien. Donec augue sem, mattis ac posuere nec, euismod a nisl. Sed tristique imperdiet sagittis. Nam mollis turpis at enim cursus posuere. Vestibulum mi urna, luctus eget auctor vel, sagittis vel ante. Mauris massa erat, varius quis suscipit vel, scelerisque sagittis sem. Quisque interdum egestas eros id vulputate. In hac habitasse platea dictumst. Nam tempor scelerisque felis in accumsan. Nullam ut erat ligula, at consectetur tortor. Donec sem dolor, placerat at dapibus eget, egestas a lacus. Nulla pulvinar nunc in sem tempor vitae commodo nunc consequat. Ut commodo mauris in ligula lobortis nec aliquam odio tempus. ',
 ];
-
+$nomsFictifs = [
+	"Rita Raté",
+	"Rémi Doré",
+	"Gaétan Tanguay",
+	"Aurélie O'Reilly",
+	"Norbert Bernard",
+];

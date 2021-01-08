@@ -14,22 +14,27 @@ $nom = $_GET['nom'];
 $salutation = $_GET['salutation'];
 $titre = $_GET['titre'];
 
-// Préparation de la liste de boutons radio
+// Création des champs cachés
+$inputNom = '<input type="hidden" name="nom" value="'.$nom.'" />';
+$inputSalutation = '<input type="hidden" name="salutation" value="'.$salutation.'" />';
+$inputTitre = '<input type="hidden" name="titre" value="'.$titre.'" />';
+
+// Création de la liste de boutons radio
 $radioParagraphe = '<div>';
 foreach($paragraphes as $indice=>$txtParagraphe) {
-	$radioParagraphe .= '<p><label>';
+	$radioParagraphe .= '<div><label>';
 	if ($indice === 0) {
 		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" checked="checked" /> ';
 	} else {
 		$radioParagraphe .= '<input name="paragraphe" type="radio" value="'.$indice.'" /> ';
 	}
 	$radioParagraphe .= substr($txtParagraphe, 0, 100).'...';
-	$radioParagraphe .= '</label></p>';
+	$radioParagraphe .= '</label></div>';
 }
 $radioParagraphe .= '</div>';
 
 ?><!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/lettre.css"/>
@@ -43,14 +48,15 @@ $radioParagraphe .= '</div>';
 					<h2>Choisissez le message</h2>
 					<div>
 						<label for="paragraphe">Paragraphe : </label>
+						<!-- Série de boutons radio -->
 						<?php echo $radioParagraphe; // Affichage de la liste de boutons de radio ?>
 					</div>
 					<div>
 						<input type="submit"/>
-						<!-- Il manquait quelque chose ici -->
-						<input type="hidden" name="nom" value="<?php echo $nom ?>" />
-						<input type="hidden" name="salutation" value="<?php echo $salutation ?>" />
-						<input type="hidden" name="titre" value="<?php echo $titre ?>" />
+						<!-- 3 champs cachés -->
+						<?php echo $inputNom; ?>
+						<?php echo $inputSalutation; ?>
+						<?php echo $inputTitre; ?>
 					</div>
 				</form>
 			</div>

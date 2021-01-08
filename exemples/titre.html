@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/lettre.css" />
+    <title>Lettre - Titre</title>
+</head>
+
+<body>
+    <div class="interface">
+        <header>Une lettre personnalisée</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil (Le nom)</a></li>
+                <li><a href="salutation.html">Une salutation</a></li>
+                <li class="courant"><a href="titre.html">Le titre</a></li>
+                <li><a href="paragraphe.html">Le contenu</a></li>
+                <li><a href="lettre.html">La lettre</a></li>
+                <li><a href="compil.html">Tout ensemble</a></li>
+            </ul>
+        </nav>
+        <footer>&copy; Cégep de Saint-Jérôme</footer>
+        <div class="app">
+            <form action="paragraphe.php" method="get">
+                <h2>Choisissez le titre du destinataire</h2>
+                <div>
+                    <label for="titre">Titre du destinataire : </label>
+                    <!-- Champ select -->
+                    <select name="titre" id="titre">
+                        <option value="M.">Monsieur</option>
+                        <option value="Mme">Madame</option>
+                        <option value="Dr">Docteur</option>
+                        <option value="Me">Maître</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" />
+                    <!-- 2 champs cachés -->
+                    <input type="hidden" name="nom" value="Rita Raté" />
+                    <input type="hidden" name="salutation" value="3" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Une lettre personnalisée</title>
+    <link rel="stylesheet" href="../css/lettre.css" />
+</head>
+
+<body>
+    <div class="interface">
+        <header>Une lettre personnalisée</header>
+        <nav>
+            <ul>
+                <li class="courant"><a href="index.html">Accueil (Le nom)</a></li>
+                <li><a href="salutation.html">Une salutation</a></li>
+                <li><a href="titre.html">Le titre</a></li>
+                <li><a href="paragraphe.html">Le contenu</a></li>
+                <li><a href="lettre.html">La lettre</a></li>
+                <li><a href="compil.html">Tout ensemble</a></li>
+            </ul>
+        </nav>
+        <footer>&copy; Cégep de Saint-Jérôme</footer>
+        <div class="app">
+            <form action="salutation.php" method="get">
+                <h2>Donnez le nom du destinataire</h2>
+                <div>
+                    <label for="nom">Destinataire : </label>
+                    <!-- Champ de texte -->
+                    <input type="text" name="nom" id="nom" list="noms" />
+                    <!-- Datalist -->
+                    <datalist id="noms">
+                        <option value="Rita Raté"></option>
+                        <option value="Rémi Doré"></option>
+                        <option value="Gaétan Tanguay"></option>
+                        <option value="Aurélie O'Reilly"></option>
+                        <option value="Norbert Bernard"></option>
+                    </datalist>
+                </div>
+                <div>
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
