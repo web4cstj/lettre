@@ -9,6 +9,19 @@ body {
 	background-color: #fffff8;
 	background-image: url(../images/motif_encre.svg);
 	font-family: 'Noto Serif TC', serif;
+	&.exemple::before {
+		content:"EXEMPLE";
+		position: absolute;
+		right: 1em;
+		color: red;
+		border: .2em dashed;
+		font-size: 4em;
+		font-family: monospace;
+		padding: .5em;
+		border-radius: .5em;
+		font-weight: bold;
+		transform: rotate(15deg);
+	}
 }
 header {
 	font-size: 5em;

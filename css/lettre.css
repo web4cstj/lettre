@@ -12,6 +12,21 @@ body {
   font-family: 'Noto Serif TC', serif;
 }
 
+body.exemple::before {
+  content: "EXEMPLE";
+  position: absolute;
+  right: 1em;
+  color: red;
+  border: .2em dashed;
+  font-size: 4em;
+  font-family: monospace;
+  padding: .5em;
+  border-radius: .5em;
+  font-weight: bold;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
 header {
   font-size: 5em;
   text-align: center;
